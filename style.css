@@ -13,7 +13,7 @@ h1 {
   text-align: center;
   border-bottom: 2px solid #eab6cc;
   padding-bottom: 15px;
-  margin-top: 0;
+  margin-top: 32px; /* ここを0→32pxに変更し、上部に余白を追加 */
   margin-bottom: 30px;
   letter-spacing: 0.06em;
   font-size: 2.2rem;
@@ -164,6 +164,7 @@ h2 {
   h1 {
     font-size: 1.3rem;
     padding-bottom: 10px;
+    margin-top: 24px;
   }
   h2 {
     font-size: 1.04rem;
@@ -172,14 +173,14 @@ h2 {
   .section {
     padding: 10px 4vw;
     margin: 16px auto;
-    max-width: 95vw; /* 画面幅の95%までに制限（パディング含めて余白を確保） */
+    max-width: 95vw;
     min-width: 0;
     box-sizing: border-box;
   }
   .map-link-box {
     padding: 8px 4vw;
     font-size: 0.98rem;
-    max-width: 95vw; /* 画面幅の95%までに制限 */
+    max-width: 95vw;
     min-width: 0;
     margin-left: auto;
     margin-right: auto;
@@ -195,7 +196,7 @@ h2 {
   }
   .video-container {
     padding-bottom: 70%;
-    max-width: 95vw; /* 画面幅の95%までに制限 */
+    max-width: 95vw;
     min-width: 0;
     margin-left: auto;
     margin-right: auto;
