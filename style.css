@@ -172,13 +172,15 @@ h2 {
   .section {
     padding: 10px 4vw;
     margin: 16px auto;
-    max-width: 480px; /* ← 横幅を最大480pxに調整 */
+    max-width: 95vw; /* 画面幅の95%までに制限（パディング含めて余白を確保） */
+    min-width: 0;
     box-sizing: border-box;
   }
   .map-link-box {
     padding: 8px 4vw;
     font-size: 0.98rem;
-    max-width: 480px; /* ← 横幅を最大480pxに調整 */
+    max-width: 95vw; /* 画面幅の95%までに制限 */
+    min-width: 0;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
@@ -193,7 +195,8 @@ h2 {
   }
   .video-container {
     padding-bottom: 70%;
-    max-width: 480px; /* ← 横幅を最大480pxに調整 */
+    max-width: 95vw; /* 画面幅の95%までに制限 */
+    min-width: 0;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
