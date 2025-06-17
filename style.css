@@ -159,6 +159,7 @@ h2 {
     max-width: 98vw;
   }
 }
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.3rem;
@@ -169,11 +170,12 @@ h2 {
     padding-bottom: 6px;
   }
   .section {
-    padding: 10px 2vw;
+    padding: 10px 4vw;    /* ← ここを2vw→4vwに変更: 両サイドの余白をやや広げる */
     margin: 16px 0;
+    max-width: 98vw;       /* ← max-width追加: スマホで横スクロールが出ないように */
   }
   .map-link-box {
-    padding: 8px 2vw;
+    padding: 8px 4vw;      /* ← ここも2vw→4vwに変更: 両サイドの余白をやや広げる */
     font-size: 0.98rem;
     max-width: 99vw;
   }
