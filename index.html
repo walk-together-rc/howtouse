@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一致団結ポスティングマップ</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>一致団結ポスティングマップ</h1>
+
+  <div class="section">
+    <h2>目的</h2>
+    <p>
+      このページは、ポスティング実施エリアを共有し合うことで、短期間に同一エリアにポスティングすることを防ぎ、レピュテーションリスクの低下とポスティング効果の最大化を目的としています。<br><br>
+      ポスティングマップの使い方動画をご確認のうえ、下記方法でマップにアクセスし、ポスティングを実施したエリアのマーキングと実施日の入力をお願いいたします。
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>ポスティングマップ</h2>
+    <p>以下のリンクをコピーして、ブラウザで表示させてください。<br>
+      <span class="attention">※ 編集には、Googleアカウントへのログインが必要です。<br>※「Googleマップ」アプリでは、編集できません。（閲覧のみ可能）</span>
+    </p>
+    <div class="map-link-box">
+      <h3>マップのリンク</h3>
+      <p>下のボタンを押してリンクをコピーし、ブラウザのアドレスバーに貼り付けてください。</p>
+      <div class="copy-area">
+        <input type="text" id="copy-target-2" value="https://www.google.com/maps/d/edit?mid=1FtqZ5spMEAvOESi4JYlyTV0Kv1JqS30&amp;usp=sharing" readonly>
+        <button id="copy-button-2">コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>使い方動画</h2>
+    <p>マップの基本的な使い方（場所の追加、編集方法など）を動画で解説しています。</p>
+    <div class="video-container">
+      <iframe 
+        width="320" 
+        height="560" 
+        src="https://www.youtube.com/embed/8GbU9JFhOu4?playsinline=0" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>FAQ</h2>
+    <details class="faq-item">
+      <summary>Q. スマートフォンからでも編集できますか？</summary>
+      <div class="faq-answer">
+        <p><strong>A.</strong> はい、可能です。ただし、「Googleマップ」アプリでは閲覧しかできないため、編集したい場合はWebブラウザから開いてください。</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Q. マップに編集メニューが表示されません。どうしたらいいですか？</summary>
+      <div class="faq-answer">
+        <p><strong>A.</strong> 「Googleマップ」アプリで開いている場合は編集ができないため、Webブラウザで開いてください。<br>
+        Webブラウザでも編集メニューが表示されない場合は、Googleアカウントにログインできているかご確認のうえ、画面下部に表示されているタイトル「一致団結ポスティングマップ」を押下し、次の画面で「編集」ボタンを押してください。（PCの場合は、画面左に「編集」ボタンが表示されます）</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Q. 同一エリアへのポスティングはどれくらいの期間を空けたらいいです？</summary>
+      <div class="faq-answer">
+        <p><strong>A.</strong> 特に決まりはないですが、3か月程度を目安に考えていただくと良いかと思います。マップを更新する際は、既にあるマークを削除もしくは縮小させ、新たにマーキングし直してください。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="section">
+    <h2>お問い合わせ先</h2>
+    <div class="contact-info">
+      <p>マップの操作に関する質問や不具合の報告は、下記までご連絡ください。</p>
+      <p><strong>Email:</strong> <a href="mailto:soma.hayashi@rakuten.com">soma.hayashi@rakuten.com</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('copy-button-2');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var input = document.getElementById('copy-target-2');
+        var button = this;
+        var originalText = button.textContent;
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(input.value).then(function () {
+            showCopiedMessage(button, originalText);
+          }).catch(function () {
+            fallbackCopy(input, button, originalText);
+          });
+        } else {
+          fallbackCopy(input, button, originalText);
+        }
+        function fallbackCopy(inputElement, button, originalText) {
+          inputElement.select();
+          inputElement.setSelectionRange(0, 99999);
+          try {
+            var successful = document.execCommand('copy');
+            if (successful) {
+              showCopiedMessage(button, originalText);
+            } else {
+              throw new Error('コピーに失敗');
+            }
+          } catch (err) {
+            alert('コピーに失敗しました。手動でコピーしてください。');
+          }
+        }
+        function showCopiedMessage(button, originalText) {
+          button.textContent = 'コピー完了！';
+          button.classList.add('copied');
+          setTimeout(function () {
+            button.textContent = originalText;
+            button.classList.remove('copied');
+          }, 2000);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

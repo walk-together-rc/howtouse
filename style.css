@@ -1,0 +1,200 @@
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background: #fff0f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* 見出しのスタイル */
+h1 {
+  color: #e4007f;
+  text-align: center;
+  border-bottom: 2px solid #eab6cc;
+  padding-bottom: 15px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  letter-spacing: 0.06em;
+  font-size: 2.2rem;
+}
+h2 {
+  color: #e4007f;
+  border-bottom: 2px solid #e4007f;
+  padding-bottom: 10px;
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+/* セクションデザイン */
+.section {
+  margin: 40px auto;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  max-width: 850px;
+}
+
+/* 注意書き */
+.attention {
+  color: #e4007f;
+}
+
+/* マップリンク枠 */
+.map-link-box {
+  border: 1px solid #ccc;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 850px;
+  margin: 20px auto 0 auto;
+  font-family: sans-serif;
+}
+.map-link-box h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+.copy-area {
+  display: flex;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 8px;
+  margin-top: 10px;
+  align-items: center;
+}
+.copy-area input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+  background: transparent;
+}
+.copy-area button {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 8px;
+  transition: background-color 0.2s;
+}
+.copy-area button.copied {
+  background-color: #1a7e32;
+}
+
+/* 動画埋め込み */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 700px;
+  margin: 20px auto 0 auto;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* FAQアコーディオン */
+.faq-item {
+  border-bottom: 1px solid #eab6cc;
+  margin-bottom: 10px;
+}
+.faq-item summary {
+  font-size: 1.08em;
+  font-weight: bold;
+  padding: 15px 50px 15px 15px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  user-select: none;
+  transition: background 0.2s;
+}
+.faq-item summary::after {
+  content: '+';
+  color: #e4007f;
+  font-size: 1.5em;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+  pointer-events: none;
+}
+.faq-item[open] summary::after {
+  content: '−';
+  transform: translateY(-50%) rotate(180deg);
+}
+.faq-answer {
+  padding: 0 20px 20px 20px;
+  background-color: #ffffff;
+}
+
+/* お問い合わせ */
+.contact-info {
+  line-height: 2;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 900px) {
+  .section {
+    padding: 20px 5vw;
+    max-width: 98vw;
+  }
+  .map-link-box {
+    padding: 12px 3vw;
+    max-width: 98vw;
+  }
+  .video-container {
+    max-width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+  }
+  h2 {
+    font-size: 1.04rem;
+    padding-bottom: 6px;
+  }
+  .section {
+    padding: 10px 2vw;
+    margin: 16px 0;
+  }
+  .map-link-box {
+    padding: 8px 2vw;
+    font-size: 0.98rem;
+    max-width: 99vw;
+  }
+  .copy-area input[type="text"] {
+    font-size: 13px;
+    padding: 3px;
+  }
+  .copy-area button {
+    padding: 6px 10px;
+    font-size: 0.98em;
+  }
+  .video-container {
+    padding-bottom: 70%;
+    max-width: 97vw;
+  }
+  .faq-item summary {
+    font-size: 1em;
+    padding: 12px 38px 12px 10px;
+  }
+  .faq-answer {
+    padding: 0 10px 15px 10px;
+    font-size: 0.98em;
+  }
+}
