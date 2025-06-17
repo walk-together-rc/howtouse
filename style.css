@@ -170,14 +170,18 @@ h2 {
     padding-bottom: 6px;
   }
   .section {
-    padding: 10px 4vw;    /* ← ここを2vw→4vwに変更: 両サイドの余白をやや広げる */
-    margin: 16px 0;
-    max-width: 98vw;       /* ← max-width追加: スマホで横スクロールが出ないように */
+    padding: 10px 4vw;
+    margin: 16px auto;
+    max-width: 480px; /* ← 横幅を最大480pxに調整 */
+    box-sizing: border-box;
   }
   .map-link-box {
-    padding: 8px 4vw;      /* ← ここも2vw→4vwに変更: 両サイドの余白をやや広げる */
+    padding: 8px 4vw;
     font-size: 0.98rem;
-    max-width: 99vw;
+    max-width: 480px; /* ← 横幅を最大480pxに調整 */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
   }
   .copy-area input[type="text"] {
     font-size: 13px;
@@ -189,7 +193,10 @@ h2 {
   }
   .video-container {
     padding-bottom: 70%;
-    max-width: 97vw;
+    max-width: 480px; /* ← 横幅を最大480pxに調整 */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
   }
   .faq-item summary {
     font-size: 1em;
